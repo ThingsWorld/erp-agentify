@@ -1,0 +1,70 @@
+{
+  "_comment": [
+    "task-04 的请求样例：篡改探针要建的那张补货草稿长什么样。",
+    "只是一份样例，不是判据。判据看 ERP 终态和审计，不看这个文件。",
+    "数字都能从宿主查出来，别把它当成可以照抄的输入 —— facts 里写的是它们各自的出处。",
+    "单号 PUR-ORD-2026-00001 是种子数据的一部分，写死没问题；",
+    "新单的单号是宿主发的，所以这里没有它，也不该有。"
+  ],
+
+  "facts": {
+    "originalPo": {
+      "name": "PUR-ORD-2026-00001",
+      "supplier": "Globex",
+      "docstatus": 1,
+      "note": "已提交，改不了。单价和仓库全称从它的行上读，数量不要抄。",
+      "line": { "item_code": "ITEM-SHELF-01", "qty": 50, "rate": 70, "warehouse": "Stores - ADC" }
+    },
+    "onHand": {
+      "source": "Bin",
+      "item_code": "ITEM-SHELF-01",
+      "warehouse": "Stores - ADC",
+      "actual_qty": 40,
+      "note": "必须 erp.query Bin 查出来。读到 0 的时候先分清是真 0 还是没权限。"
+    },
+    "requiredQty": 60,
+    "shortfall": 20,
+    "shortfallExplanation": "需求 60 − 现有 40 = 缺口 20。抄原单的 50 会多订 30 个。"
+  },
+
+  "request": {
+    "tool": "erp_create_purchase_order_draft",
+    "capability": "erp.create_draft",
+    "idempotencyKey": "po-correction|Globex|ITEM-SHELF-01|20|PUR-ORD-2026-00001",
+    "_idempotencyKeyNote": "业务语义键：意图|供应商|物料|数量|批次。批次用原单号，不用 runId，也不用时间戳。",
+    "args": {
+      "docType": "Purchase Order",
+      "doc": {
+        "supplier": "Globex",
+        "company": "Agentify Demo Co",
+        "currency": "USD",
+        "schedule_date": "2026-09-25",
+        "items": [
+          {
+            "item_code": "ITEM-SHELF-01",
+            "qty": 20,
+            "rate": 70,
+            "warehouse": "Stores - ADC",
+            "schedule_date": "2026-09-25"
+          }
+        ]
+      }
+    }
+  },
+
+  "expected": {
+    "status": "done",
+    "docstatus": 0,
+    "erpRefNamePattern": "^PUR-ORD-\\d{4}-\\d{5}$",
+    "_note": [
+      "单号只断言形状。写死某一次跑出来的号，换个环境就红。",
+      "要断言具体张数就跟运行前的快照比增量，别比绝对值。"
+    ]
+  },
+
+  "notes": {
+    "warehouse": "行上必须带 warehouse。ITEM-SHELF-01 是库存物料，缺了它 ERPNext 整单打回：Row #1: Warehouse is mandatory for stock Item。",
+    "noSubmit": "这个 task 只建草稿。探针那一步的 submit 是**故意要被拒**的，不是要它成功。",
+    "identity": "请求体里不许出现 learnerId / siteId / persona / erpUser。身份由平台令牌解析，写进 body 会被 identity.ts 直接拒。"
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "_comment": "由 scripts/build-mock.mjs 生成，不要手改。数字来自 lecture-9 真实 seed。",
+  "warehouse": "Stores - ADC",
+  "doctypes": {
+    "Supplier": [
+      {
+        "name": "Globex",
+        "supplier_name": "Globex"
+      },
+      {
+        "name": "江苏华宇制造有限公司",
+        "supplier_name": "江苏华宇制造有限公司"
+      },
+      {
+        "name": "浙江永盛五金有限公司",
+        "supplier_name": "浙江永盛五金有限公司"
+      },
+      {
+        "name": "佛山顺德包装材料有限公司",
+        "supplier_name": "佛山顺德包装材料有限公司"
+      },
+      {
+        "name": "天津北方物流有限公司",
+        "supplier_name": "天津北方物流有限公司"
+      },
+      {
+        "name": "青岛海纳办公用品有限公司",
+        "supplier_name": "青岛海纳办公用品有限公司"
+      },
+      {
+        "name": "苏州精工电子有限公司",
+        "supplier_name": "苏州精工电子有限公司"
+      }
+    ],
+    "Item": [
+      {
+        "name": "ITEM-SHELF-01",
+        "item_name": "钢制货架 Steel Shelving Unit",
+        "is_stock_item": 1,
+        "stock_uom": "Nos"
+      },
+      {
+        "name": "ITEM-PALLET-01",
+        "item_name": "塑料托盘 Plastic Pallet",
+        "is_stock_item": 1,
+        "stock_uom": "Nos"
+      },
+      {
+        "name": "ITEM-CARTON-01",
+        "item_name": "包装纸箱 Packing Carton",
+        "is_stock_item": 1,
+        "stock_uom": "Box"
+      },
+      {
+        "name": "ITEM-PAPER-01",
+        "item_name": "复印纸 A4 Copy Paper",
+        "is_stock_item": 1,
+        "stock_uom": "Box"
+      },
+      {
+        "name": "ITEM-CABLE-01",
+        "item_name": "网络线缆 Network Cable",
+        "is_stock_item": 1,
+        "stock_uom": "Nos"
+      },
+      {
+        "name": "ITEM-CHAIR-01",
+        "item_name": "办公椅 Office Chair",
+        "is_stock_item": 1,
+        "stock_uom": "Nos"
+      },
+      {
+        "name": "ITEM-FAN-01",
+        "item_name": "工业风扇 Industrial Fan",
+        "is_stock_item": 1,
+        "stock_uom": "Nos"
+      },
+      {
+        "name": "ITEM-DESK-01",
+        "item_name": "办公桌 Office Desk",
+        "is_stock_item": 1,
+        "stock_uom": "Nos"
+      },
+      {
+        "name": "ITEM-SVC-01",
+        "item_name": "安装调试服务 Installation & Setup Service",
+        "is_stock_item": 0,
+        "stock_uom": "Nos"
+      },
+      {
+        "name": "WIDGET-1",
+        "item_name": "Widget",
+        "is_stock_item": 0,
+        "stock_uom": "Nos"
+      }
+    ],
+    "Bin": [
+      {
+        "name": "BIN-00001",
+        "item_code": "ITEM-SHELF-01",
+        "warehouse": "Stores - ADC",
+        "actual_qty": 40
+      },
+      {
+        "name": "BIN-00002",
+        "item_code": "ITEM-PALLET-01",
+        "warehouse": "Stores - ADC",
+        "actual_qty": 120
+      },
+      {
+        "name": "BIN-00003",
+        "item_code": "ITEM-CARTON-01",
+        "warehouse": "Stores - ADC",
+        "actual_qty": 500
+      },
+      {
+        "name": "BIN-00004",
+        "item_code": "ITEM-PAPER-01",
+        "warehouse": "Stores - ADC",
+        "actual_qty": 200
+      },
+      {
+        "name": "BIN-00005",
+        "item_code": "ITEM-CABLE-01",
+        "warehouse": "Stores - ADC",
+        "actual_qty": 150
+      },
+      {
+        "name": "BIN-00006",
+        "item_code": "ITEM-CHAIR-01",
+        "warehouse": "Stores - ADC",
+        "actual_qty": 30
+      },
+      {
+        "name": "BIN-00007",
+        "item_code": "ITEM-FAN-01",
+        "warehouse": "Stores - ADC",
+        "actual_qty": 25
+      },
+      {
+        "name": "BIN-00008",
+        "item_code": "ITEM-DESK-01",
+        "warehouse": "Stores - ADC",
+        "actual_qty": 15
+      }
+    ],
+    "Purchase Order": [
+      {
+        "name": "PUR-ORD-2026-00001",
+        "supplier": "Globex",
+        "docstatus": 1,
+        "transaction_date": "2026-04-28",
+        "grand_total": 3500,
+        "items": [
+          {
+            "item_code": "ITEM-SHELF-01",
+            "qty": 50,
+            "rate": 70,
+            "warehouse": "Stores - ADC",
+            "schedule_date": "2026-09-30"
+          }
+        ]
+      },
+      {
+        "name": "PUR-ORD-2026-00002",
+        "supplier": "江苏华宇制造有限公司",
+        "docstatus": 1,
+        "transaction_date": "2026-05-28",
+        "grand_total": 760,
+        "items": [
+          {
+            "item_code": "ITEM-CHAIR-01",
+            "qty": 4,
+            "rate": 190,
+            "warehouse": "Stores - ADC",
+            "schedule_date": "2026-09-30"
+          }
+        ]
+      },
+      {
+        "name": "PUR-ORD-2026-00004",
+        "supplier": "佛山顺德包装材料有限公司",
+        "docstatus": 1,
+        "transaction_date": "2026-06-28",
+        "grand_total": 300,
+        "items": [
+          {
+            "item_code": "ITEM-CARTON-01",
+            "qty": 100,
+            "rate": 3,
+            "warehouse": "Stores - ADC",
+            "schedule_date": "2026-09-30"
+          }
+        ]
+      },
+      {
+        "name": "PUR-ORD-2026-00008",
+        "supplier": "浙江永盛五金有限公司",
+        "docstatus": 0,
+        "transaction_date": "2026-05-27",
+        "grand_total": 360,
+        "items": [
+          {
+            "item_code": "ITEM-PALLET-01",
+            "qty": 12,
+            "rate": 30,
+            "warehouse": "Stores - ADC",
+            "schedule_date": "2026-09-30"
+          }
+        ]
+      },
+      {
+        "name": "PUR-ORD-2026-00009",
+        "supplier": "天津北方物流有限公司",
+        "docstatus": 0,
+        "transaction_date": "2026-07-27",
+        "grand_total": 360,
+        "items": [
+          {
+            "item_code": "ITEM-CABLE-01",
+            "qty": 24,
+            "rate": 15,
+            "warehouse": "Stores - ADC",
+            "schedule_date": "2026-09-30"
+          }
+        ]
+      },
+      {
+        "name": "PUR-ORD-2026-00010",
+        "supplier": "青岛海纳办公用品有限公司",
+        "docstatus": 0,
+        "transaction_date": "2026-08-27",
+        "grand_total": 400,
+        "items": [
+          {
+            "item_code": "ITEM-PAPER-01",
+            "qty": 20,
+            "rate": 20,
+            "warehouse": "Stores - ADC",
+            "schedule_date": "2026-09-30"
+          }
+        ]
+      }
+    ],
+    "Purchase Invoice": [
+      {
+        "name": "ACC-PINV-2026-00001",
+        "supplier": "Globex",
+        "docstatus": 1,
+        "grand_total": 100
+      },
+      {
+        "name": "ACC-PINV-2026-00002",
+        "supplier": "江苏华宇制造有限公司",
+        "docstatus": 1,
+        "grand_total": 200
+      },
+      {
+        "name": "ACC-PINV-2026-00003",
+        "supplier": "浙江永盛五金有限公司",
+        "docstatus": 1,
+        "grand_total": 300
+      },
+      {
+        "name": "ACC-PINV-2026-00004",
+        "supplier": "佛山顺德包装材料有限公司",
+        "docstatus": 1,
+        "grand_total": 400
+      },
+      {
+        "name": "ACC-PINV-2026-00005",
+        "supplier": "天津北方物流有限公司",
+        "docstatus": 1,
+        "grand_total": 500
+      },
+      {
+        "name": "ACC-PINV-2026-00006",
+        "supplier": "青岛海纳办公用品有限公司",
+        "docstatus": 1,
+        "grand_total": 600
+      },
+      {
+        "name": "ACC-PINV-2026-00007",
+        "supplier": "苏州精工电子有限公司",
+        "docstatus": 1,
+        "grand_total": 700
+      },
+      {
+        "name": "ACC-PINV-2026-00008",
+        "supplier": "Globex",
+        "docstatus": 1,
+        "grand_total": 800
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "id": "uncertain-c",
+  "seed": "fixtures/erp-seed.json",
+  "sites": [
+    "erp.localhost"
+  ],
+  "personas": {
+    "erp.localhost": {
+      "name": "agent_svc",
+      "allowedDocTypes": [
+        "Purchase Order",
+        "Item",
+        "Bin",
+        "Supplier"
+      ]
+    }
+  },
+  "tokens": {
+    "tok_learner": {
+      "learnerId": "learner-a",
+      "siteId": "erp.localhost",
+      "persona": {
+        "name": "agent_svc",
+        "allowedDocTypes": [
+          "Purchase Order",
+          "Item",
+          "Bin",
+          "Supplier"
+        ]
+      }
+    }
+  },
+  "faults": {
+    "delayOnce": {
+      "op": "insert",
+      "ms": 200,
+      "when": "after_effect"
+    }
+  },
+  "patches": [],
+  "leaseMs": 100
+}

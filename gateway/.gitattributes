@@ -1,0 +1,6 @@
+# 文本一律 LF。Windows 上 core.autocrlf=true 会把 CRLF 塞进来，
+# 让 file_contains 的正则和跨平台脚本随机挂掉（lecture-9 真踩过）。
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.ico binary

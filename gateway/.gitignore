@@ -1,0 +1,6 @@
+node_modules/
+.env
+.ledger*/
+reports/*.rerun.json
+reports/live-*.json
+*.log

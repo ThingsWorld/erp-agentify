@@ -1,0 +1,11 @@
+{
+  "temporary_course_layout": "/tmp/erp-acceptance-brd_q4mz",
+  "command": "npm run eval:public",
+  "exit_code": 0,
+  "evaluator_files_unchanged": true,
+  "notes": [
+    "仅在临时目录恢复课程原始starter/gateway布局",
+    "原工作区评分器与评分规则未修改",
+    "tasks/*.yaml不随学员文件下发；隐藏评测由助教运行"
+  ]
+}

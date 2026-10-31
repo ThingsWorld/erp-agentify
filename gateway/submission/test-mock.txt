@@ -1,0 +1,31 @@
+
+> w12-erp-gateway@1.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /home/ubuntu/code/agentist_academy/lab-w12-erp-agentify/gateway
+
+ ✓ tests/task-06.idempotency.test.ts (8 tests) 10005ms
+     ✓ cross-process-4 · 4 个独立进程抢同一个键，恰好一个 acquired（跑 5 轮）  7587ms
+     ✓ cross-process-4 · positive control：四个进程各拿各的键，四个都该 acquired  1516ms
+     ✓ lease-recovery · 租约过期领得回（recovered、attempts+1），uncertain 永远不领回  305ms
+ ✓ tests/store.pg-adapter.test.ts (21 tests | 1 skipped) 124ms
+ ✓ tests/task-09.capstone.test.ts (10 tests) 45ms
+ ✓ tests/task-00.preflight.test.ts (12 tests) 53ms
+ ✓ tests/task-07.reconciliation.test.ts (9 tests) 27ms
+ ✓ tests/task-08.audit-injection.test.ts (7 tests) 39ms
+ ✓ tests/task-05.create-draft.test.ts (10 tests) 39ms
+ ✓ tests/task-04.risk-floor.test.ts (11 tests) 40ms
+ ✓ tests/task-03.source-scan.test.ts (8 tests) 27ms
+ ✓ tests/task-02.tool-contract.test.ts (10 tests) 32ms
+ ✓ tests/task-03.identity-isolation.test.ts (7 tests) 29ms
+ ✓ tests/task-09.no-bypass.test.ts (7 tests) 25ms
+ ✓ tests/task-01.read-inventory.test.ts (11 tests) 25ms
+ ✓ tests/task-07.reconciliation-errors.test.ts (2 tests) 18ms
+ ✓ tests/task-08.boundaries.test.ts (2 tests) 9ms
+
+ Test Files  15 passed (15)
+      Tests  134 passed | 1 skipped (135)
+   Start at  16:28:22
+   Duration  14.51s (transform 558ms, setup 0ms, import 1.27s, tests 10.54s, environment 3ms)
+

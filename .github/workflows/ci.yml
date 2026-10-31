@@ -1,0 +1,35 @@
+name: Gateway checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  mock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: gateway
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: gateway/package-lock.json
+      - run: npm ci
+      - run: npm run preflight
+      - run: npm run verify:fixture
+      - run: npm run typecheck
+      - run: npm test
+      - name: Capstone scenario
+        run: node src/capstone/run.mjs
+      - name: Public evaluator with original course layout
+        run: node ../scripts/eval-public.mjs

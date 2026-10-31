@@ -1,0 +1,78 @@
+{
+  "id": "two-sites",
+  "seed": "fixtures/erp-seed.json",
+  "sites": [
+    "erp.localhost",
+    "erp-b.localhost"
+  ],
+  "personas": {
+    "erp.localhost": {
+      "name": "agent_svc",
+      "allowedDocTypes": [
+        "Purchase Order",
+        "Item",
+        "Bin",
+        "Supplier"
+      ]
+    },
+    "erp-b.localhost": {
+      "name": "agent_svc",
+      "allowedDocTypes": [
+        "Purchase Order",
+        "Item",
+        "Bin",
+        "Supplier"
+      ]
+    }
+  },
+  "tokens": {
+    "tok_learner": {
+      "learnerId": "learner-a",
+      "siteId": "erp.localhost",
+      "persona": {
+        "name": "agent_svc",
+        "allowedDocTypes": [
+          "Purchase Order",
+          "Item",
+          "Bin",
+          "Supplier"
+        ]
+      }
+    },
+    "tok_bob": {
+      "learnerId": "learner-b",
+      "siteId": "erp-b.localhost",
+      "persona": {
+        "name": "agent_svc",
+        "allowedDocTypes": [
+          "Purchase Order",
+          "Item",
+          "Bin",
+          "Supplier"
+        ]
+      }
+    }
+  },
+  "faults": {},
+  "patches": [
+    {
+      "site": "erp-b.localhost",
+      "doctype": "Bin",
+      "match": {
+        "item_code": "ITEM-SHELF-01"
+      },
+      "set": {
+        "actual_qty": 99
+      }
+    },
+    {
+      "site": "erp-b.localhost",
+      "doctype": "Purchase Order",
+      "name": "PUR-ORD-2026-00001",
+      "set": {
+        "supplier": "Globex",
+        "grand_total": 9900
+      }
+    }
+  ]
+}

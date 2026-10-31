@@ -1,0 +1,29 @@
+{
+  "name": "w12-erp-gateway",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "W12 · 给已有的 ERP 外挂一层 Agent",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "preflight": "node scripts/preflight.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:task": "node scripts/test-task.mjs",
+    "mock:reset": "node scripts/reset-mock.mjs",
+    "mock:baseline": "node scripts/capture-baseline.mjs",
+    "eval:public": "node scripts/eval-public.mjs",
+    "verify:fixture": "node scripts/verify-fixture.mjs",
+    "verify:starter": "node scripts/verify-starter.mjs",
+    "smoke:live": "node scripts/smoke-live.mjs",
+    "demo:mock": "node scripts/demo-mock.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.2",
+    "tsx": "4.23.13",
+    "typescript": "5.7.2",
+    "vitest": "4.1.11"
+  }
+}

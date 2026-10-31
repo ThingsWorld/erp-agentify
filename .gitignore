@@ -1,0 +1,28 @@
+# Local credentials and editor / course environment configuration
+.env
+.env.*
+!.env.example
+.agents/
+.codex/
+.aws/
+.vscode/
+.idea/
+.DS_Store
+
+# Dependencies, local state and build output
+node_modules/
+.ledger*/
+*.log
+*.tsbuildinfo
+coverage/
+dist/
+.publish/
+
+# Generated runs; keep the hand-written environment notes
+gateway/reports/**
+!gateway/reports/environment.md
+
+# Personal course review payloads and machine-specific snapshots
+gateway/submission/review-*.txt
+gateway/submission/review-receipt.md
+gateway/submission/acceptance-status.md
