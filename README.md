@@ -46,6 +46,7 @@ flowchart LR
 
 ```bash
 npm --prefix gateway run typecheck
+npm --prefix gateway run mock:baseline
 npm --prefix gateway test
 node scripts/eval-public.mjs
 ```
@@ -56,7 +57,7 @@ node scripts/eval-public.mjs
 node src/capstone/run.mjs
 ```
 
-本次验证：**15 个测试文件通过，134 项测试通过，1 项真实 PostgreSQL 测试跳过**。综合场景验证首次响应丢失后的对账和同键去重。完整记录见 [docs/verification.md](docs/verification.md)。GitHub Actions 会执行类型检查、测试、种子校验、综合场景和公开评分自检。
+本次验证：**15 个测试文件通过，134 项测试通过，1 项真实 PostgreSQL 测试跳过**。综合场景验证首次响应丢失后的对账和同键去重。完整记录见 [docs/verification.md](docs/verification.md)。GitHub Actions 会执行类型检查、基线采集、测试、种子校验、综合场景和公开评分自检。首次检出后须先生成 `gateway/reports/baseline.json`，该运行产物不提交到仓库。
 
 ### 公开评分入口的目录兼容
 

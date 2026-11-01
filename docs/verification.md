@@ -16,7 +16,9 @@
 
 公开评分入口只负责还原 `starter/gateway/` 布局，运行课程提供的原始评分器。自检包含一条正确轨迹和两条反例：`success → pass`、`business_fail → business_fail`、`security_fail → safety_fail`。反例按预期失败，属于评分自检通过的条件。
 
-`gateway/submission/` 保留原课程的设计说明、失败分析、反思及历史验收证据。本次兼容入口产生的最新报告位于 `gateway/reports/eval-public.json`，属于可重新生成的本地产物。新增 GitHub CI 尚需推送后由 GitHub Actions 执行，本地通过不等于远端 CI 已通过。
+`gateway/submission/` 保留原课程的设计说明、失败分析、反思及历史验收证据。本次兼容入口产生的最新报告位于 `gateway/reports/eval-public.json`，属于可重新生成的本地产物。远端 CI 结果见 [GitHub Actions](https://github.com/ThingsWorld/erp-agentify/actions)。
+
+2026-11-01 首次 GitHub CI 暴露出干净检出缺少 `reports/baseline.json` 的问题，导致两项基线测试失败。工作流已在 `npm test` 前增加 `npm run mock:baseline`，通过 Gateway 重新采集基线；README 同步补充该准备步骤。修复后在不携带原工作区运行产物的发布副本中采集基线并运行全量测试：15 个测试文件通过，134 项通过，1 项真实 PostgreSQL 测试跳过。
 
 发布整理未改动 `gateway/evaluator/`、`gateway/fixtures/`、`gateway/mock/scenarios/` 或已有测试断言。发布副本逐文件核对保留的内容，并扫描本地配置中的凭据值及常见密钥格式；不携带原仓库的 Git 历史。
 

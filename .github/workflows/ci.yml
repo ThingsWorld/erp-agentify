@@ -28,6 +28,8 @@ jobs:
       - run: npm run preflight
       - run: npm run verify:fixture
       - run: npm run typecheck
+      - name: Capture mock baseline
+        run: npm run mock:baseline
       - run: npm test
       - name: Capstone scenario
         run: node src/capstone/run.mjs
